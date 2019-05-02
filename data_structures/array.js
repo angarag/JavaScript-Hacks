@@ -35,3 +35,9 @@ arr.sort((k, v) => v - k);
 
 const email = "angarag@gmail.com";
 arr = email.split("@");
+
+//Sum
+arr.reduce((sum, value) => sum + value, 0);
+//Min/Max
+const arrMax = arr => Math.max(...arr);
+const arrMin = arr => Math.min(...arr);

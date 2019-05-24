@@ -13,7 +13,13 @@ var map2 = new Map([
   ["lastname", "ghosh"],
   ["website", "geeksforgeeks"]
 ]);
+let set = new Set();
+map2.entries(); //return iterator object that contains key/value pair
+//the following functions are same for set
 map2.delete("website");
 map2.values(); //returns iterator object
-map2.entries(); //return iterator object that contains key/value pair
 map2.clear();
+//Set
+set.add(key);
+set.has(key);
+set.keys() == set.values();

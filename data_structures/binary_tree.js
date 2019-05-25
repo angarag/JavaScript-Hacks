@@ -71,7 +71,7 @@ var levelOrder = function(root) {
       arr[d].push(root.val);
       bfs(root.left, d + 1);
       bfs(root.right, d + 1);
-    } else arr[d].push(null); //null included!!!
+    } else arr[d].push(null); //null node & null leaves included!!!
   }
   return arr;
 };
@@ -87,4 +87,31 @@ var maxDepth = function(root) {
     return l > r ? l : r;
   }
   return d;
+};
+
+//Root-to-leaf path sum
+var hasPathSum = function(root, sum) {
+  if (root == null) return false;
+  if (root.left == null && root.right == null && root.val == sum) return true;
+  if ((root.left == null || root.right == null) && root.val == sum)
+    return false;
+  let sums = new Set();
+  helper(root, 0);
+  function helper(r, val) {
+    if (r) {
+      val += r.val;
+      //if to collect only root-to-leafe path if leaf has no children
+      if (r.left == null && r.right == null) sums.add(val); //only leaf path sums being collected
+      helper(r.left, val);
+      helper(r.right, val);
+    }
+    /* if to collect all paths
+    else {
+        sums.add(val);
+    }
+    */
+  }
+  let arr = Array.from(sums.values());
+  for (let a of arr) if (a == sum) return true;
+  return false;
 };

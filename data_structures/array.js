@@ -41,3 +41,9 @@ arr.reduce((sum, value) => sum + value, 0);
 //Min/Max
 const arrMax = arr => Math.max(...arr);
 const arrMin = arr => Math.min(...arr);
+
+//toString
+let s1 = arr1
+  .toString()
+  .split(",")
+  .join("");

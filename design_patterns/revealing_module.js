@@ -1,5 +1,3 @@
-//https://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript
-
 const revealing_mars = (function() {
   //do smth
   let name = "Mars";

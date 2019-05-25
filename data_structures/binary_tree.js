@@ -6,6 +6,13 @@ function TreeNode(val) {
   this.left = this.right = null;
 }
 /*
+Depth First Traversals:
+(a) Inorder (Left, Root, Right) : 4 2 5 1 3
+(b) Preorder (Root, Left, Right) : 1 2 4 5 3
+(c) Postorder (Left, Right, Root) : 4 5 2 3 1
+BFS: Root,Left,Right
+*/
+/*
  * @param {TreeNode} root
  * @return {number[]}
  */
@@ -46,17 +53,26 @@ var inorderTraversal = function(root) {
   return arr;
 };
 
-//BFS = inorder
+//BFS = levelOrder
+/*
+Given binary tree [3,9,20,null,null,15,7],
+[
+    [3],
+    [9,20],
+    [null,null,15,7] //null can be excluded
+  ]
+  */
 var levelOrder = function(root) {
   let arr = [];
-  if (root != null) {
-    arr.push(root.val);
-    l = levelOrder(root.left);
-    if (l) arr.push(l);
-    r = levelOrder(root.right);
-    if (r) arr.push(r);
+  let d = bfs(root, 0);
+  function bfs(root, d) {
+    if (arr[d] == undefined) arr[d] = [];
+    if (root) {
+      arr[d].push(root.val);
+      bfs(root.left, d + 1);
+      bfs(root.right, d + 1);
+    } else arr[d].push(null); //null included!!!
   }
-  console.log(arr);
   return arr;
 };
 

@@ -15,3 +15,7 @@ const revealing_mars = (function() {
 revealing_mars.printName();
 revealing_mars.setName("Angarag");
 revealing_mars.printName();
+
+(() => {
+  console.log("this is a module pattern");
+})();

@@ -35,3 +35,8 @@ function counter(state, action) {
   }
 }
 export default counter;
+
+import { createStore } from "redux";
+import counter from "./reducer";
+
+var store = createStore(counter);

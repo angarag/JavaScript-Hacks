@@ -19,6 +19,8 @@ arr = arr.concat([9, 9, 9]);
 
 //Slice new array
 const new_arr = arr.slice(0, 2).reverse();
+//Splice array works in original array
+array.splice(index, howmany, new_item1, ....., new_itemX) //if howmany=0, new items to be inserted
 
 //Traverse
 arr.forEach(element => {

@@ -5,3 +5,4 @@ let obj = {};
 arr.forEach(a => (obj[a] = a));
 console.log(obj);
 console.log(arr[3] == undefined);
+console.log(Math.min(...arr.filter(i => i != NaN)));

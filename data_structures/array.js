@@ -4,7 +4,8 @@ arr = [];
 
 //Create array from map
 //arr = Array.from(myMap.keys());
-
+Array.every(condition):boolean
+Array.call(condition):boolean
 //Add new element to the beginning
 arr.unshift(Math.random(7));
 

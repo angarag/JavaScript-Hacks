@@ -12,3 +12,6 @@ if (ascii > 64 && ascii < 91) {
 }
 
 S = S.substr(start, length);
+
+String.match("something");
+String.match(/l/g); //find all l occurings

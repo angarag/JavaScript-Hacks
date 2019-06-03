@@ -17,9 +17,10 @@ arr.shift();
 //Join arrays and return new array
 arr = arr.concat([9, 9, 9],[8,8]);
 
-//Slice new array
+//Slice return selected elements as new array: array.slice(start, end), end not included
 const new_arr = arr.slice(0, 2).reverse();
-//Splice array works in original array
+//Splice array works in original array;adds/removes items to/from an array, and returns the remaining item(s).
+//add before the index
 array.splice(index, howmany, new_item1, ....., new_itemX) //if howmany=0, new items to be inserted
 
 //Iterate
@@ -57,4 +58,3 @@ let s1 = arr1
 
   //9 ways to delete element from array
   //https://love2dev.com/blog/javascript-remove-from-array/
-  

@@ -49,3 +49,12 @@ setImmediate(() => {
 setImmediate(function() {
   console.log(this.name);
 });
+
+//Inheritance
+var protoCircle = { x: 0, y: 0, radius: 1, color: "black" };
+var c1 = Object.create(protoCircle);
+c1.x = 4;
+c1.color = "green";
+var c2 = protoCircle;
+c2.color = "white";
+//Inspect elements now. c1._proto.color==="white"

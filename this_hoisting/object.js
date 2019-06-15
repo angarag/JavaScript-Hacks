@@ -58,3 +58,6 @@ c1.color = "green";
 var c2 = protoCircle;
 c2.color = "white";
 //Inspect elements now. c1._proto.color==="white"
+
+//Prototype vs proto
+//https://www.javascripttutorial.net/javascript-prototype/

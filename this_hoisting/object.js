@@ -29,3 +29,23 @@ g(); //14
   let y = "isGlobal";
   console.log(this.x, this.y, y);
 })();
+
+this.name = "global name";
+
+function test() {
+  console.log(this.name);
+}
+//global name
+console.log(this.name);
+//undefined as this refers to func scope
+test();
+//undefined again
+setImmediate(test);
+//this refers to execution context, so will print global name
+setImmediate(() => {
+  console.log(this.name);
+});
+//undefined.
+setImmediate(function() {
+  console.log(this.name);
+});

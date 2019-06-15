@@ -142,3 +142,61 @@
       console.log("HW3-4 server listening on 7070");
     });
 }
+{
+  //HW5-1
+  const os = require("os");
+  console.log("Total RAM:", os.totalmem());
+  //HW5-2
+  const express = require("express");
+  const app = express();
+  const axios = require("axios");
+  app.use("*", (req, res) => {
+    console.log("*");
+    function helper() {
+      return axios.get("https://randomuser.me/api/?results=11");
+    }
+    async function hw6() {
+      const result = await helper();
+      res.json(result.data);
+    }
+    hw6();
+  });
+  app.listen(3000, () => {
+    console.log("listening on 3000");
+  });
+}
+{
+  //HW6 - CRUD using Express
+  const express = require("express");
+  const app = express();
+  const axios = require("axios");
+  app.use(express.json());
+  const arr = [];
+  app.get("/users", (req, res) => {
+    console.log("*");
+    function helper() {
+      return axios.get("https://randomuser.me/api/?results=11");
+    }
+    async function hw6() {
+      const result = await helper();
+      if (arr.length != 0) res.json(arr);
+      else {
+        arr.push(result.data);
+        res.json(result.data);
+      }
+    }
+    hw6();
+  });
+  app.post("/users", function(req, res) {
+    arr.unshift(req.body.id);
+    res.json(arr);
+  });
+  app.delete("/users", (req, res) => {
+    delete arr[req.body.id];
+    arr = arr.filter(i => i != null);
+    res.json(arr);
+  });
+  app.listen(3000, () => {
+    console.log("listening on 3000");
+  });
+}

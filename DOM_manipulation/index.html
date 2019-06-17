@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <style>
+      .btn {
+        height: 2rem;
+        max-width: 10rem;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      const div = helper("div");
+      const button = helper("button", "btn");
+      button.innerHTML = "Add child";
+      button.className = "btn";
+      const add = () => {
+        let count = 0;
+        return function() {
+          console.log("clicked");
+          const r = Math.random() * 100;
+          const aChild = helper("li", count++);
+          aChild.innerHTML = r;
+          aChild.addEventListener("click", del);
+          const ul = document.getElementsByTagName("ul")[0];
+          ul.appendChild(aChild);
+        };
+      };
+      const del = function() {
+        console.log("del clicked", this.id);
+        getById("mylist").removeChild(getById(this.id));
+      };
+      function helper(str, id = null) {
+        const r = document.createElement(str);
+        if (id != null) r.id = id;
+        return r;
+      }
+      function getById(id) {
+        return document.getElementById(id);
+      }
+      button.addEventListener("click", add());
+      div.appendChild(button);
+      div.appendChild(helper("ul","mylist"));
+      document.getElementById("root").appendChild(div);
+    </script>
+  </body>
+</html>

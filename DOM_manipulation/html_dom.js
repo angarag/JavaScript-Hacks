@@ -13,9 +13,9 @@ element.innerHTML =  new html content;
 element.setAttribute(attribute, value)
 //Add & Delete
 document.createElement(element)
-document.removeChild(element)
-document.appendChild(element)
-document.replaceChild(new, old)
+node.removeChild(element)
+node.appendChild(element)
+node.replaceChild(new, old)
 document.write(text)
 //Adding Event Handlers
 document.getElementById("demo").addEventListener("click", myFunction);

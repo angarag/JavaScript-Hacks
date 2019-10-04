@@ -38,7 +38,7 @@ for (index in arr) console.log(arr[index]);
 //Sort
 arr.sort((k, v) => v - k);
 
-
+//Associate array not copied with concat, [...] and slice!
 let a = [];
 a.push(10);
 a.push(9);

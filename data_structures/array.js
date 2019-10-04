@@ -38,6 +38,36 @@ for (index in arr) console.log(arr[index]);
 //Sort
 arr.sort((k, v) => v - k);
 
+
+let a = [];
+a.push(10);
+a.push(9);
+a["haha"]="hoho";
+console.log(a);
+const b = [...a];
+b["haha"]===undefined;
+const c = [].concat(a);
+c["haha"]==undefined;
+const d = a.slice();
+d["haha"]===undefined;
+
+const arr = [1,2,3,4,5];
+arr["hihi"]="huhu";
+arr[100]="s";
+arr[102]=777;
+arr.length==103;
+delete arr[2];
+arr.length==103;
+
+const arr1=[...arr];
+console.dir(arr1);//lots of undefined elements
+
+const arr2=arr.slice();
+arr2["hihi"]===undefined;
+
+delete a["haha"];
+a["haha"]===undefined;
+
 //Add/Remove
 //arr.splice(index, howManyToBeRemoved, itemsToBeAdded,...,itemX);
 

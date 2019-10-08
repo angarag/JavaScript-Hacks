@@ -39,7 +39,7 @@ for (index in arr) console.log(arr[index]);
 arr.sort((k, v) => v - k);
 
 //Unique values
-arr.filter((item,index)=> this.indexOf(item)===index);
+arr.filter((item,index,self)=> self.indexOf(item)===index);
 
 //Associate array not copied with concat, [...] and slice!
 let a = [];

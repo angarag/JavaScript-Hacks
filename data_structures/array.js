@@ -1,6 +1,7 @@
 //Initialize array
 let arr = new Array(7);
 arr = [];
+cons b = new Array(7).fill(undefined);
 
 //Create array from map
 //arr = Array.from(myMap.keys());

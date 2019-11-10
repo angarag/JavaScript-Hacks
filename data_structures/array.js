@@ -39,8 +39,9 @@ for (index in arr) console.log(arr[index]);
 //Sort
 arr.sort((k, v) => v - k);
 
-//Unique values
+//Unique values - remove duplicates
 arr.filter((item,index,self)=> self.indexOf(item)===index);
+const uniqueArr=[...new Set(array)];
 
 //Associate array not copied with concat, [...] and slice!
 let a = [];

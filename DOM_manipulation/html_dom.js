@@ -5,6 +5,7 @@ const c2 = (document.createElement("div").textContent =
 //Access
 document.getElementById(id);
 document.getElementsByTagName(name);
+document.querySelectorAll("something").forEach(...);
 ie:
 document.getElementsByTagName("p")[0].innerHTML
 document.getElementsByClassName(name);

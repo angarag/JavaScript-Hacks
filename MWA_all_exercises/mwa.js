@@ -109,6 +109,7 @@
   class Gym extends EventEmitter {
     constructor() {
       super();
+      this.emit("boom", "missed");
       setImmediate(() => {
         this.emit("boom", "aMessage");
         this.emit("boom", null);

@@ -19,6 +19,11 @@ arr.shift();
 //Join arrays and return new array
 arr = arr.concat([9, 9, 9],[8,8]);
 
+//Reverse - reverses the array and return the reference
+let a = [1,2,3];
+let b = a.reverse();
+delete a[1];
+
 //Slice return selected elements as new array: array.slice(start, end), end not included
 const new_arr = arr.slice(0, 2).reverse();
 //Splice array works in original array;adds/removes items to/from an array, and returns the remaining item(s).

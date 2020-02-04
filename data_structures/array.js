@@ -28,7 +28,9 @@ delete a[1];
 const new_arr = arr.slice(0, 2).reverse();
 //Splice array works in original array;adds/removes items to/from an array, and returns the remaining item(s).
 //add before the index
-array.splice(index, howmany, new_item1, ....., new_itemX) //if howmany=0, new items to be inserted
+let newArr=array.splice(index, howmany, new_item1, ....., new_itemX) //if howmany=0, new items to be inserted
+//newArr contains howMany items from index position
+//new_arr contains the remainning items
 
 //Iterate
 arr.forEach(element => {

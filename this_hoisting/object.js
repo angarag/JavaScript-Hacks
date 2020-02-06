@@ -59,5 +59,23 @@ var c2 = protoCircle;
 c2.color = "white";
 //Inspect elements now. c1._proto.color==="white"
 
+this.arr = [9, 10, 11, 12];
+var arr = [1, 2, 3, 4];
+for (let i = 0; i < arr.length; i++) {
+  const arr = [20, 30, 40, 50];
+  this.arr = [5, 6, 7, 8, 9];
+  this.arr2 = this.arr;
+  this.arr3 = this.arr.slice();
+  delete this.arr[2];
+  delete this.arr2[0];
+  setTimeout(() => {
+    this.arr = [77, 77, 77, 77, 77];
+    console.log(i, arr, this.arr, this.arr2, this.arr3);
+  }, 1000);
+  setTimeout(function() {
+    this.arr = [50, 60, 70, 80, 90];
+    console.log(i, arr, this.arr, this.arr2, this.arr3);
+  }, 1000);
+}
 //Prototype vs proto
 //https://www.javascripttutorial.net/javascript-prototype/

@@ -15,6 +15,7 @@ Promise.all([pp1, pp3, pp2])
   }, 0);
 });
 const p2 = new Promise(res => {
+  console.log("pre p2");
   setTimeout(() => {
     res("p2");
   }, 0);
@@ -24,8 +25,11 @@ function all(arr) {
   return helper(arr);
   async function helper(arr) {
     let temp = null;
+    console.log("main operation after pre2 because of hoisting");
     for (let i = 0; i < arr.length; i++) {
+      result.push(i);
       temp = await arr[i];
+      console.log("first or");
       result.push(temp);
       if (i == arr.length - 1)
         return new Promise(res => {

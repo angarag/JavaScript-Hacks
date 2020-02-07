@@ -37,6 +37,8 @@ function all(arr) {
 all([p1, p2]).then(values => {
   console.log(values);
 });
-Promise.all([p1, p2]).then(r => {
-  console.log(r);
-});
+
+Promise.allSettled([pp1, pp2, pp3])
+  .then(response => {
+    console.log("all with status and value:", response);
+  })

@@ -8,41 +8,59 @@ Promise.all([pp1, pp3, pp2])
   })
   .catch(error => console.error("not all fulfilled:", error));
   
-  
-  const p1 = new Promise(res => {
+Promise.allSettled([pp1, pp2, pp3])
+  .then(response => {
+    console.log("all with status and value:", response);
+  })
+
+const test = () => {
+  console.log("when will I be printed");
+};
+const all = arr => {
+  let result = [];
+  console.log("this will be printed only after func call");
   setTimeout(() => {
-    res("p1");
+    result.push(-1);
   }, 0);
-});
+  return helper(arr);
+  async function helper(arr) {
+    let temp = null;
+    console.log("main operation");
+    setTimeout(() => {
+      result.push(1111);
+    }, 0);
+    for (let i = 0; i < arr.length; i++) {
+      result.push(i);
+      console.log("before pushing result to array", result);
+      temp = await arr[i];
+      result.push(temp);
+      console.log("after pushing result to array", result);
+      if (i == arr.length - 1)
+        return new Promise(res => {
+          res(result);
+        });
+    }
+    console.log("main operation after loop");
+  }
+};
 const p2 = new Promise(res => {
   console.log("pre p2");
   setTimeout(() => {
     res("p2");
   }, 0);
 });
-function all(arr) {
-  let result = [];
-  return helper(arr);
-  async function helper(arr) {
-    let temp = null;
-    console.log("main operation after pre2 because of hoisting");
-    for (let i = 0; i < arr.length; i++) {
-      result.push(i);
-      temp = await arr[i];
-      console.log("first or");
-      result.push(temp);
-      if (i == arr.length - 1)
-        return new Promise(res => {
-          res(result);
-        });
-    }
-  }
-}
-all([p1, p2]).then(values => {
+const p1 = new Promise(res => {
+  setTimeout(() => {
+    res("p1");
+  }, 0);
+  console.log("pre p1");
+});
+const p3 = Promise.resolve("p3");
+all([p3, p1, p2, p3]).then(values => {
   console.log(values);
 });
 
-Promise.allSettled([pp1, pp2, pp3])
-  .then(response => {
-    console.log("all with status and value:", response);
-  })
+console.log("regular Promise all beginning");
+Promise.all([p1, p2]).then(r => {
+  console.log(r);
+});

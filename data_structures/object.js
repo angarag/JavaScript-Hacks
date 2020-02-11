@@ -41,4 +41,5 @@ Object.seal(obj1);
 obj1.aa=3;
 console.log(obj1);//{aa:3}
 
-
+Object.freeze vs const
+https://alligator.io/js/const-vs-obj-freeze/

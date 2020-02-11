@@ -34,6 +34,10 @@ Object.keys(c) == for(let key in c);
 let obj={hoho:1};
 Object.freeze(obj);
 obj.hihi=2;
-console.log(obj);
+obj.hoho=2;
+console.log(obj);//{hoho:1}
+Object.seal(obj);
+obj.hoho=3;
+console.log(obj);//{hoho:3}
 
 

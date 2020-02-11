@@ -36,8 +36,9 @@ Object.freeze(obj);
 obj.hihi=2;
 obj.hoho=2;
 console.log(obj);//{hoho:1}
-Object.seal(obj);
-obj.hoho=3;
-console.log(obj);//{hoho:3}
+let obj1={aa:1};
+Object.seal(obj1);
+obj1.aa=3;
+console.log(obj1);//{aa:3}
 
 

@@ -8,7 +8,8 @@ Math.sqrt(64); // returns 8
 Math.abs(-4.7); // returns 4.7
 Math.ceil(4.4); // returns 5, rounded up
 Math.floor(4.7); // returns 4, rounded down
-Math.max(...array);
+Math.max(...array); 
+Math.max()==-Infinity;//max compares values with something which is -Infinity
 let m = Number.MAX_VALUE;
 m = Number.MAX_SAFE_INTEGER;
 m = Number.MIN_VALUE;

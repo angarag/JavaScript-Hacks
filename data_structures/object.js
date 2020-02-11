@@ -31,3 +31,9 @@ c.test==d.test;
 //Object keys will iterate over only own properties while for(let in) loop will do deep iteration.
 Object.keys(c) == for(let key in c);
 
+let obj={hoho:1};
+Object.freeze(obj);
+obj.hihi=2;
+console.log(obj);
+
+

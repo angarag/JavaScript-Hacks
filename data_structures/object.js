@@ -43,3 +43,8 @@ console.log(obj1);//{aa:3}
 
 Object.freeze vs const
 https://alligator.io/js/const-vs-obj-freeze/
+
+Object comparison:
+https://gist.github.com/angarag/eb9e4cbc182045242787a14555ed35ee
+https://github.com/hughsk/shallow-equals
+https://www.npmjs.com/package/deep-equal

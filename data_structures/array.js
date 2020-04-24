@@ -49,6 +49,26 @@ arr.sort((k, v) => v - k);
 //Unique values - remove duplicates
 arr.filter((item,index,self)=> self.indexOf(item)===index);
 const uniqueArr=[...new Set(array)];
+var removeDuplicates = function (nums) {
+  nums.sort((a, b) => a - b);
+  let prevIndex = null;
+  let prev = null;
+  let count = null;
+  for (let i = 1; i <= nums.length; i++) {
+    prev = nums[i - 1];
+    if (nums[i] != prev) {
+      prevIndex = nums.indexOf(prev);
+      count = i - prevIndex;
+      console.log(i, count, nums);
+      if (count > 1) {
+        nums.splice(prevIndex, count - 1);
+        i -= count - 1;
+      }
+    }
+  }
+  console.log(nums);
+  return nums.length;
+};
 
 //Associate array not copied with concat, [...] and slice!
 let a = [];

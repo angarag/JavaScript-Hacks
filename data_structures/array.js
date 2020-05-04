@@ -45,6 +45,34 @@ for (index in arr) console.log(arr[index]);
 
 //Sort
 arr.sort((k, v) => v - k);
+//Merge two sorted array
+/**
+ * @param {number[]} nums1
+ * @param {number} m
+ * @param {number[]} nums2
+ * @param {number} n
+ * @return {void} Do not return anything, modify nums1 in-place instead.
+ */
+var merge = function(nums1, m, nums2, n) {
+    let insertIndex=0;
+    let origLength=nums1.length;
+    nums1.length=m;
+    for(let i=0;i<nums2.length;i++){
+        const placeMe=nums2[i];
+        helper(placeMe);
+        nums1.splice(insertIndex,0,placeMe);
+        insertIndex++;
+    }
+    function helper(placeMe){
+        for(let i=insertIndex;i<=nums1.length;i++){
+            if(nums1[i]<placeMe){
+                insertIndex++;
+            }
+            else break;
+        }
+    }
+    nums1.length=m+n;
+};
 
 //Unique values - remove duplicates
 arr.filter((item,index,self)=> self.indexOf(item)===index);

@@ -34,6 +34,7 @@ let newArr=array.splice(index, howmany, new_item1, ....., new_itemX) //if howman
 
 //Iterate
 arr.forEach(element => {
+  //it is not possible to return or break in forEach, instead use plain loop
   console.log(element); //result.push(false)
 });
 //Map and Filter

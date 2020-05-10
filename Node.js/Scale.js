@@ -1,3 +1,4 @@
+//Option #1
 const { fork } = require("child_process");
 const http = require("http");
 
@@ -14,7 +15,7 @@ if (false) {
     processes[0].kill("SIGINT");
   }, 10000);
 }
-
+//Option #2
 const cluster = require("cluster");
 const numCPUs = require("os").cpus().length;
 

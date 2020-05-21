@@ -29,6 +29,7 @@ let c=Object.create(d);
 d.test=2;
 c.test==d.test;
 //Object keys will iterate over only own properties while for(let in) loop will do deep iteration.
+//Object keys will return a list of strings (undefined, null, boolean will become strings!!!)
 Object.keys(c) == for(let key in c);
 
 let obj={hoho:1};

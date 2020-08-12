@@ -13,7 +13,7 @@ console.log(entries);
 var map2 = new Map([
   ["firstname", "sumit"],
   ["lastname", "ghosh"],
-  ["website", "geeksforgeeks"]
+  ["website", "geeksforgeeks"],
 ]);
 let set = new Set();
 map2.entries(); //return iterator object that contains key/value pair

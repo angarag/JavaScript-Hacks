@@ -1,7 +1,7 @@
 /**
  * Initialize your data structure here.
  */
-var MyHashMap = function() {
+var MyHashMap = function () {
   this.arr = [];
 };
 
@@ -11,7 +11,7 @@ var MyHashMap = function() {
  * @param {number} value
  * @return {void}
  */
-MyHashMap.prototype.put = function(key, value) {
+MyHashMap.prototype.put = function (key, value) {
   this.arr[key] = value;
 };
 
@@ -20,7 +20,7 @@ MyHashMap.prototype.put = function(key, value) {
  * @param {number} key
  * @return {number}
  */
-MyHashMap.prototype.get = function(key) {
+MyHashMap.prototype.get = function (key) {
   if (this.arr[key] != undefined) return this.arr[key];
   else return -1;
 };
@@ -30,7 +30,7 @@ MyHashMap.prototype.get = function(key) {
  * @param {number} key
  * @return {void}
  */
-MyHashMap.prototype.remove = function(key) {
+MyHashMap.prototype.remove = function (key) {
   this.arr[key] = undefined;
 };
 

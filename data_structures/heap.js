@@ -24,9 +24,9 @@ export class MinHeap {
       parent = this.getParentIndex(i);
     }
   }
-  function swap(array,a,b){
-	  const temp = array[a];
-	  array[a]=array[b];
-	  array[b]=temp;
+  swap(array, a, b) {
+    const temp = array[a];
+    array[a] = array[b];
+    array[b] = temp;
   }
 }

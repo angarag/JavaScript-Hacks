@@ -2,6 +2,7 @@
 const test = () => {
   console.log("when will I be printed");
 };
+
 const all = async arr => {
   let result = [];
   console.log("this will be printed only after func call");

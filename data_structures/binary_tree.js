@@ -16,7 +16,7 @@ BFS: Root,Left,Right
  * @param {TreeNode} root
  * @return {number[]}
  */
-var preorderTraversal = function(root) {
+var preorderTraversal = function (root) {
   let arr = [];
   if (root != null) {
     console.log(root.val);
@@ -30,7 +30,7 @@ var preorderTraversal = function(root) {
   }
   return arr;
 };
-var postorderTraversal = function(root) {
+var postorderTraversal = function (root) {
   let arr = [];
   if (root != null) {
     let l = postorderTraversal(root.left);
@@ -41,7 +41,7 @@ var postorderTraversal = function(root) {
   }
   return arr;
 };
-var inorderTraversal = function(root) {
+var inorderTraversal = function (root) {
   let arr = [];
   if (root != null) {
     let l = inorderTraversal(root.left);
@@ -62,7 +62,7 @@ Given binary tree [3,9,20,null,null,15,7],
     [null,null,15,7] //null can be excluded
   ]
   */
-var levelOrder = function(root) {
+var levelOrder = function (root) {
   let arr = [];
   let d = bfs(root, 0);
   function bfs(root, d) {
@@ -77,7 +77,7 @@ var levelOrder = function(root) {
 };
 
 //Max depth
-var maxDepth = function(root) {
+var maxDepth = function (root) {
   if (root == null) return 0;
   let d = helper(root, 1);
   function helper(root, depth) {
@@ -90,7 +90,7 @@ var maxDepth = function(root) {
 };
 
 //Root-to-leaf path sum
-var hasPathSum = function(root, sum) {
+var hasPathSum = function (root, sum) {
   if (root == null) return false;
   if (root.left == null && root.right == null && root.val == sum) return true;
   if ((root.left == null || root.right == null) && root.val == sum)

@@ -1,8 +1,7 @@
 import React from 'react';
 import App from './App';
 import { render, fireEvent, cleanup } from '@testing-library/react';
-
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 const renderApp = () => render(<App/>);
 

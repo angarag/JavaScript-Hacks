@@ -75,4 +75,5 @@ test('no customer added on empty input', () => {
 	fireEvent.click(addButton);
 	expect(queryByTestId('customer-list')).toBe(null);
 	expect(queryByTestId('list-item0')).toBe(null);
+	expect(queryByTestId('list-item7')).toBe(null);
 });

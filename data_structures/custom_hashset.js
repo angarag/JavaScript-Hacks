@@ -1,7 +1,7 @@
 /**
  * Initialize your data structure here.
  */
-var MyHashSet = function() {
+var MyHashSet = function () {
   this.arr = [];
 };
 
@@ -9,7 +9,7 @@ var MyHashSet = function() {
  * @param {number} key
  * @return {void}
  */
-MyHashSet.prototype.add = function(key) {
+MyHashSet.prototype.add = function (key) {
   this.arr[key] = true;
 };
 
@@ -17,7 +17,7 @@ MyHashSet.prototype.add = function(key) {
  * @param {number} key
  * @return {void}
  */
-MyHashSet.prototype.remove = function(key) {
+MyHashSet.prototype.remove = function (key) {
   this.arr[key] = undefined;
 };
 
@@ -26,7 +26,7 @@ MyHashSet.prototype.remove = function(key) {
  * @param {number} key
  * @return {boolean}
  */
-MyHashSet.prototype.contains = function(key) {
+MyHashSet.prototype.contains = function (key) {
   return this.arr[key] != undefined ? true : false;
 };
 
